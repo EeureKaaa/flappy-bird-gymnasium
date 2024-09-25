@@ -33,6 +33,9 @@ from gymnasium.envs.registration import register
 # Exporting envs:
 from flappy_bird_gymnasium.envs.flappy_bird_env import FlappyBirdEnv
 
+# two birds
+from flappy_bird_gymnasium.envs.flappy_2birds_env import Flappy2BirdsEnv
+
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 
 register(
@@ -40,7 +43,13 @@ register(
     entry_point="flappy_bird_gymnasium:FlappyBirdEnv",
 )
 
+register(
+    id="Flappy2Birds-v0",  
+    entry_point="flappy_bird_gymnasium:Flappy2BirdsEnv",  # 指向新的环境
+)
+
 # Main names:
 __all__ = [
     FlappyBirdEnv.__name__,
+    Flappy2BirdsEnv.__name__,
 ]
